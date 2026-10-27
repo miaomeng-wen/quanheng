@@ -69,7 +69,7 @@
 - 运行环境：Node ≥ 20，零外部依赖；`npm start` 启动，监听 `PORT`（默认 4173）。
 - 公网演示：Render 免费 Web Service，仓库推送自动部署，地址 https://quanheng.onrender.com （免费层闲置休眠、重启后演示数据重置，属预期）。
 - 模拟时钟：初始 2026-10-27，可经界面“快进”推进，用于演示定时任务、订阅扣费与计划执行。
-- LLM 兜底已在公网演示启用：环境变量 `QH_LLM_BASE_URL`、`QH_LLM_API_KEY`、`QH_LLM_MODEL` 指向智谱开放平台（模型 glm-4-flash，免费档）；端点不可用或未配置时自动降级为纯规则解析。
+- LLM 兜底已在公网演示启用：环境变量 `QH_LLM_BASE_URL`、`QH_LLM_API_KEY`、`QH_LLM_MODEL` 指向智谱开放平台（模型 glm-4.5-flash，免费档）；端点不可用或未配置时自动降级为纯规则解析。
 
 ## 6. 测试
 
