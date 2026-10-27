@@ -87,6 +87,7 @@ function createAgent({tools,clock,llm=createLLM()}={}) {
     if(typeof message!=='string'||!message.trim()||message.length>8000)return response('请输入有效消息。');
     const guard=screen(message);if(guard.blocked){tools.gate.recordInjection();return response(`已拦截：${guard.reason}`);}
     let i=parseIntent(message);if(i.intent==='unknown')i=await llm(message)||i;
+    if(['balance','bills','subscriptions','products'].includes(i.intent)&&/(张三|李四|家人|别人|他人|他的|她的)/.test(message))return response('出于隐私与安全，我只能查询你本人名下的账户、账单与订阅，无法查询他人的信息。');
     const snapshot=()=>tools.state.snapshot();
     const shiftMonth=(ym,delta)=>{const d=new Date(Date.UTC(+ym.slice(0,4),+ym.slice(5,7)-1+delta,1));return d.toISOString().slice(0,7);};
     function latestBills(){let month=clock.now().slice(0,7);for(let k=0;k<12;k++){const r=call('analyze_bills',{month});if(Object.keys(r.data.categories).length)return r.data;month=shiftMonth(month,-1);}return call('analyze_bills',{month:clock.now().slice(0,7)}).data;}
