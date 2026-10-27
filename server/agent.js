@@ -38,13 +38,30 @@ function createAgent({tools,clock,llm=createLLM()}={}) {
   const response=(reply,cards=[],extra={})=>({reply,cards,stateVersion:version(),...extra});
   const call=(tool,p={})=>tools.call(tool,{...p,idempotencyKey:randomUUID()});
   function invalidate(){for(const p of pending.values()){p.invalid=true;if(p.authId)tools.gate.revoke(p.authId);}latest=undefined;}
+  const REF_NAMES={contact_zhangsan:'张三',contact_lisi:'李四',contact_family:'家人',acc_exercise:'行权资金专户',acc_demand:'工资卡/活期'};
+  const refName=ref=>REF_NAMES[ref]||ref;
+  const cardName=id=>id==='card_physical'?'实体卡':String(id).includes('virtual')?'虚拟卡':'银行卡';
+  function summarize(tool,p={}) {
+    switch(tool){
+      case 'transfer':return `向${refName(p.toRef)}转账 ${yuan(p.amountCents)}`;
+      case 'schedule_transfer':return `定时转账：${String(p.executeAt||'').slice(0,10)} 向${refName(p.toRef)}转账 ${yuan(p.amountCents)}`;
+      case 'create_plan':return `创建备资计划：每月锁定 ${yuan(p.monthlyLockCents)}，目标日期 ${String(p.targetDate||'').slice(0,10)}`;
+      case 'cancel_plan':return '取消备资计划（未执行步骤将不再执行）';
+      case 'set_card_status':return p.limitCents!==undefined?`将${cardName(p.cardId)}单日限额调整为 ${yuan(p.limitCents)}`:`${p.status==='unlost'?'解除挂失':'挂失'}${cardName(p.cardId)}`;
+      case 'apply_virtual_card':return '申请一张虚拟卡';
+      case 'cancel_subscription':{const s=call('list_subscriptions').data?.find(x=>x.id===p.subscriptionId);return s?`取消订阅「${s.name}」（${yuan(s.amountCents)}/月）`:'取消订阅';}
+      case 'buy_product':{const pr=call('get_products').data?.find(x=>x.id===p.productId);return `申购理财产品${pr?`「${pr.name}」`:''} ${yuan(p.amountCents)}`;}
+      case 'redeem_product':{const pr=call('get_products').data?.find(x=>x.id===p.productId);return `赎回理财产品${pr?`「${pr.name}」`:''}${p.amountCents?` ${yuan(p.amountCents)}`:''}`;}
+      default:return tool;
+    }
+  }
   function finish(tool,p,r) {
     if(!r.ok&&['NEED_CONFIRM','NEED_VERIFY'].includes(r.error.code)){
       const ref=randomUUID();pending.set(ref,{tool,params:structuredClone(p),expires:Date.parse(clock.now())+300000});latest=ref;
-      const data=r.data;const summary=tool==='transfer'?`转账至 ${data.params.toRef}，金额 ${yuan(data.params.amountCents)}`:tool==='create_plan'?`创建备资计划，每月锁定 ${yuan(data.params.monthlyLockCents)}，到期 ${data.params.targetDate}`:`${tool}：${JSON.stringify(data.params)}`;
+      const data=r.data;const summary=summarize(tool,data.params);
       return response('请核对详情并完成授权。',[{type:r.error.code==='NEED_CONFIRM'?'confirm':'verify',toolCallRef:ref,summary,paramsDigest:data.paramsDigest,params:data.params}]);
     }
-    return response(r.ok?`办理成功：${tool}${r.data?.amountCents!==undefined?'，'+yuan(r.data.amountCents):''}。`:`未执行：${r.error.code}。`,[],{result:r});
+    return response(r.ok?`办理成功：${summarize(tool,p)}。`:`未执行：${r.error.code}。`,[],{result:r});
   }
   async function authorize({toolCallRef,proof}={}) {
     const p=pending.get(toolCallRef);
