@@ -1,0 +1,91 @@
+{
+  "version": {
+    "value": "mof-sta-2023-25",
+    "verified": true
+  },
+  "effectivePeriod": {
+    "value": "单独计税执行至2027年12月31日（财政部 税务总局公告2023年第25号第三条）",
+    "verified": true
+  },
+  "mergeSameYear": {
+    "value": true,
+    "verified": true
+  },
+  "incomeTreatment": {
+    "value": "股权激励全额单独适用综合所得年度税率表",
+    "verified": true
+  },
+  "sources": [
+    "财政部 税务总局公告2023年第25号（fgk.chinatax.gov.cn/zcfgk/c102416/c5211082/content.html）",
+    "财政部 税务总局公告2024年第2号（广东省税务局转载总局文件）",
+    "财税〔2005〕35号（fgk.chinatax.gov.cn/zcfgk/c102416/c5203004/content.html）",
+    "个人所得税法税率表一（综合所得适用），数值经广东省税务局2025-10-09官方税率表页面核实",
+    "财税字〔1998〕61号；财税〔2009〕167号",
+    "核查报告：docs/policy-research.md（2026-10-27）"
+  ],
+  "verified": true,
+  "unverified": false,
+  "brackets": [
+    {
+      "upperBoundCents": 3600000,
+      "rateBps": 300,
+      "quickDeductionCents": 0,
+      "verified": true
+    },
+    {
+      "upperBoundCents": 14400000,
+      "rateBps": 1000,
+      "quickDeductionCents": 252000,
+      "verified": true
+    },
+    {
+      "upperBoundCents": 30000000,
+      "rateBps": 2000,
+      "quickDeductionCents": 1692000,
+      "verified": true
+    },
+    {
+      "upperBoundCents": 42000000,
+      "rateBps": 2500,
+      "quickDeductionCents": 3192000,
+      "verified": true
+    },
+    {
+      "upperBoundCents": 66000000,
+      "rateBps": 3000,
+      "quickDeductionCents": 5292000,
+      "verified": true
+    },
+    {
+      "upperBoundCents": 96000000,
+      "rateBps": 3500,
+      "quickDeductionCents": 8592000,
+      "verified": true
+    },
+    {
+      "upperBoundCents": null,
+      "rateBps": 4500,
+      "quickDeductionCents": 18192000,
+      "verified": true
+    }
+  ],
+  "incomeDefinition": {
+    "value": "股权激励收入（股票期权）＝（行权日每股市场价－每股施权价）×股票数量；市场价为行权日收盘价",
+    "source": "财税〔2005〕35号第二条第（二）项；国家税务总局公告2016年第62号第一条第（四）款",
+    "verified": true
+  },
+  "deferral": {
+    "monthsMax": 36,
+    "source": "财政部 税务总局公告2024年第2号第一条：境内上市公司股票期权/限制性股票/股权奖励经备案，个人可自行权之日起在不超过36个月的期限内缴纳个人所得税；离职前须缴清；执行至2027年12月31日",
+    "verified": true
+  },
+  "transferCirculatingExempt": {
+    "value": true,
+    "source": "财税字〔1998〕61号、财税〔2009〕167号第八条：个人转让从公开发行和转让市场取得的上市公司股票所得暂免/继续免征；限售股另按20%计税，不在本引擎v1范围",
+    "verified": true
+  },
+  "post2027Warning": {
+    "value": "2027年12月31日之后单独计税是否延续，截至2026-10-27未见官方文件；2028年起的行权测算须提示政策到期风险",
+    "verified": true
+  }
+}

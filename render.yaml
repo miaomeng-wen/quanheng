@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: quanheng
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server/app.js"
+    envVars:
+      - key: NODE_ENV
+        value: production

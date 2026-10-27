@@ -1,0 +1,1 @@
+{"engines":{"node":">=20"},"name":"quanheng","private":true,"scripts":{"start":"node server/app.js","test":"node --test"},"type":"commonjs","version":"1.0.0"}

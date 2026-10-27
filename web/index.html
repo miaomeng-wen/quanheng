@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>权衡 · 模拟银行</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">权</span><div><strong>权衡</strong><small>你的银行决策助手</small></div></div><span class="demo-label">模拟演示环境</span></header>
+<main class="layout">
+  <section class="conversation" aria-labelledby="chat-title">
+    <div class="section-heading"><div><span class="eyebrow">QUANHENG ASSISTANT</span><h1 id="chat-title">聊聊你的财务计划</h1><p>从日常收支到重要决策，先问问权衡。</p></div><span class="online">● 服务中</span></div>
+    <div id="messages" class="messages" aria-live="polite"><div class="message assistant"><div class="avatar">权</div><div class="bubble"><strong>你好，我是权衡。</strong><p>可以帮你查看账户、分析账单，或一起测算期权行权方案。试试下面的问题，开始对话吧。</p></div></div></div>
+    <div class="composer"><div class="quick-title">试试这样问 <span>点击即可发送</span></div><div id="chips" class="chips"></div><form id="chat-form"><label class="sr-only" for="message">输入消息</label><input id="message" autocomplete="off" placeholder="输入你的问题或办理需求…" required><button class="primary" type="submit">发送 <span aria-hidden="true">→</span></button></form><p class="footnote">模拟银行不连接真实资金，测算结果仅供参考。</p></div>
+  </section>
+  <aside class="bank" aria-labelledby="bank-title"><div class="bank-heading"><div><span class="eyebrow">YOUR OVERVIEW</span><h2 id="bank-title">我的银行</h2></div><span class="live-dot">● 实时快照</span></div><div id="panel" aria-live="polite"><p class="empty">正在加载账户信息…</p></div></aside>
+</main>
+</body></html>

@@ -1,0 +1,432 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "林衡"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "acc_demand",
+      "userId": "u1",
+      "type": "demand",
+      "name": "工资卡/活期",
+      "balanceCents": 2000000
+    },
+    {
+      "id": "acc_exercise",
+      "userId": "u1",
+      "type": "exercise_fund",
+      "name": "行权资金专户",
+      "balanceCents": 0
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact_family",
+      "name": "家人"
+    },
+    {
+      "id": "contact_zhangsan",
+      "name": "张三"
+    },
+    {
+      "id": "contact_lisi",
+      "name": "李四"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "seed_tx_1",
+      "accountId": "acc_demand",
+      "ts": "2026-07-01T08:00:00.000Z",
+      "direction": "in",
+      "amountCents": 2800000,
+      "category": "salary",
+      "counterparty": "雇主",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_2",
+      "accountId": "acc_demand",
+      "ts": "2026-07-03T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 600000,
+      "category": "housing",
+      "counterparty": "房东",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_3",
+      "accountId": "acc_demand",
+      "ts": "2026-07-10T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 300000,
+      "category": "food",
+      "counterparty": "日常餐饮",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_4",
+      "accountId": "acc_demand",
+      "ts": "2026-07-15T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 150000,
+      "category": "shopping",
+      "counterparty": "购物",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_5",
+      "accountId": "acc_demand",
+      "ts": "2026-07-20T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 125000,
+      "category": "transport",
+      "counterparty": "出行",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_6",
+      "accountId": "acc_demand",
+      "ts": "2026-07-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 2500,
+      "category": "subscription",
+      "counterparty": "视频会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_7",
+      "accountId": "acc_demand",
+      "ts": "2026-07-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1500,
+      "category": "subscription",
+      "counterparty": "音乐会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_8",
+      "accountId": "acc_demand",
+      "ts": "2026-07-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1000,
+      "category": "subscription",
+      "counterparty": "云存储",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_9",
+      "accountId": "acc_demand",
+      "ts": "2026-07-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 20000,
+      "category": "subscription",
+      "counterparty": "健身会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_10",
+      "accountId": "acc_demand",
+      "ts": "2026-08-01T08:00:00.000Z",
+      "direction": "in",
+      "amountCents": 2800000,
+      "category": "salary",
+      "counterparty": "雇主",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_11",
+      "accountId": "acc_demand",
+      "ts": "2026-08-03T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 600000,
+      "category": "housing",
+      "counterparty": "房东",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_12",
+      "accountId": "acc_demand",
+      "ts": "2026-08-10T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 300000,
+      "category": "food",
+      "counterparty": "日常餐饮",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_13",
+      "accountId": "acc_demand",
+      "ts": "2026-08-15T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 150000,
+      "category": "shopping",
+      "counterparty": "购物",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_14",
+      "accountId": "acc_demand",
+      "ts": "2026-08-20T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 125000,
+      "category": "transport",
+      "counterparty": "出行",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_15",
+      "accountId": "acc_demand",
+      "ts": "2026-08-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 2500,
+      "category": "subscription",
+      "counterparty": "视频会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_16",
+      "accountId": "acc_demand",
+      "ts": "2026-08-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1500,
+      "category": "subscription",
+      "counterparty": "音乐会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_17",
+      "accountId": "acc_demand",
+      "ts": "2026-08-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1000,
+      "category": "subscription",
+      "counterparty": "云存储",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_18",
+      "accountId": "acc_demand",
+      "ts": "2026-08-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 20000,
+      "category": "subscription",
+      "counterparty": "健身会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_19",
+      "accountId": "acc_demand",
+      "ts": "2026-09-01T08:00:00.000Z",
+      "direction": "in",
+      "amountCents": 2800000,
+      "category": "salary",
+      "counterparty": "雇主",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_20",
+      "accountId": "acc_demand",
+      "ts": "2026-09-03T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 600000,
+      "category": "housing",
+      "counterparty": "房东",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_21",
+      "accountId": "acc_demand",
+      "ts": "2026-09-10T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 300000,
+      "category": "food",
+      "counterparty": "日常餐饮",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_22",
+      "accountId": "acc_demand",
+      "ts": "2026-09-15T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 150000,
+      "category": "shopping",
+      "counterparty": "购物",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_23",
+      "accountId": "acc_demand",
+      "ts": "2026-09-20T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 125000,
+      "category": "transport",
+      "counterparty": "出行",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_24",
+      "accountId": "acc_demand",
+      "ts": "2026-09-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 2500,
+      "category": "subscription",
+      "counterparty": "视频会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_25",
+      "accountId": "acc_demand",
+      "ts": "2026-09-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1500,
+      "category": "subscription",
+      "counterparty": "音乐会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_26",
+      "accountId": "acc_demand",
+      "ts": "2026-09-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 1000,
+      "category": "subscription",
+      "counterparty": "云存储",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_tx_27",
+      "accountId": "acc_demand",
+      "ts": "2026-09-05T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 20000,
+      "category": "subscription",
+      "counterparty": "健身会员",
+      "memo": "历史流水",
+      "toolCallId": "seed"
+    },
+    {
+      "id": "seed_anomaly",
+      "accountId": "acc_demand",
+      "ts": "2026-09-25T08:00:00.000Z",
+      "direction": "out",
+      "amountCents": 800000,
+      "category": "shopping",
+      "counterparty": "陌生商户",
+      "memo": "异常大额",
+      "toolCallId": "seed"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_physical",
+      "userId": "u1",
+      "kind": "physical",
+      "status": "active",
+      "limitCents": 1000000
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub_1",
+      "userId": "u1",
+      "name": "视频会员",
+      "amountCents": 2500,
+      "cycle": "monthly",
+      "nextChargeAt": "2026-11-05T08:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "sub_2",
+      "userId": "u1",
+      "name": "音乐会员",
+      "amountCents": 1500,
+      "cycle": "monthly",
+      "nextChargeAt": "2026-11-05T08:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "sub_3",
+      "userId": "u1",
+      "name": "云存储",
+      "amountCents": 1000,
+      "cycle": "monthly",
+      "nextChargeAt": "2026-11-05T08:00:00.000Z",
+      "status": "active"
+    },
+    {
+      "id": "sub_4",
+      "userId": "u1",
+      "name": "健身会员",
+      "amountCents": 20000,
+      "cycle": "monthly",
+      "nextChargeAt": "2026-11-05T08:00:00.000Z",
+      "status": "active"
+    }
+  ],
+  "products": [
+    {
+      "id": "product_money_market",
+      "name": "稳健货币基金",
+      "riskLevel": "R1",
+      "expectedReturnBps": 180,
+      "minAmountCents": 100
+    },
+    {
+      "id": "product_bond",
+      "name": "固收理财",
+      "riskLevel": "R2",
+      "expectedReturnBps": 300,
+      "minAmountCents": 100000
+    },
+    {
+      "id": "product_balanced",
+      "name": "均衡理财",
+      "riskLevel": "R3",
+      "expectedReturnBps": 500,
+      "minAmountCents": 100000
+    }
+  ],
+  "holdings": [
+    {
+      "id": "holding_money_market",
+      "userId": "u1",
+      "productId": "product_money_market",
+      "sharesCents": 10000000
+    }
+  ],
+  "exerciseBaseline": {
+    "shares": 10000,
+    "exercisePriceCents": 1200,
+    "priceCents": 2800,
+    "expiryDate": "2027-03-31"
+  }
+}
