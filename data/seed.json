@@ -24,15 +24,18 @@
   "contacts": [
     {
       "id": "contact_family",
-      "name": "家人"
+      "name": "家人",
+      "phone": "13600136000"
     },
     {
       "id": "contact_zhangsan",
-      "name": "张三"
+      "name": "张三",
+      "phone": "13800138000"
     },
     {
       "id": "contact_lisi",
-      "name": "李四"
+      "name": "李四",
+      "phone": "13900139000"
     }
   ],
   "transactions": [
