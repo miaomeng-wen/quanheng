@@ -113,7 +113,7 @@ function createAgent({tools,clock,llm=createLLM()}={}) {
       case 'cards':return response('卡片状态见面板。',[{type:'cards',data:snapshot().cards}]);
       case 'apply_virtual_card':return run('apply_virtual_card');
       case 'card_change':{const cards=snapshot().cards;const c=cards.find(c=>message.includes(c.id))||(cards.length===1?cards[0]:null);if(!c)return response('请指定卡片编号。');const limit=extract(message,`限额\\s*(?:改成|改为)?\\s*(${NUM})`);return run('set_card_status',limit!==undefined?{cardId:c.id,limitCents:cents(limit)}:{cardId:c.id,status:/解挂/.test(message)?'unlost':'lost'});}
-      default:return response('抱歉，目前仅支持模拟银行的余额、账单、转账、理财、卡片、订阅、行权测算和资金计划，无法办理该请求。');
+      default:return response('抱歉，这个请求不在我的业务范围里，办不了。我能帮你的是模拟银行的余额查询、账单分析、转账、理财申购赎回、卡片、订阅、行权测算和资金计划——比如先帮你看看余额，或者分析一下最近的账单？');
     }
   }
   return {chat,authorize,stateVersion:version};
